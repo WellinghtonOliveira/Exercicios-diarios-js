@@ -16,6 +16,7 @@ function combinations(cards) {
   // 2️⃣ Aplicar a fórmula: C(n, k) = n! / (k! * (n - k)!)
   const result = factorial(n) / (factorial(k) * factorial(n - k));
 
+ 
   // 3️⃣ Retornar o valor final
   return result;
 }
