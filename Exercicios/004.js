@@ -4,12 +4,12 @@ function getExtension(filename) {
 
     console.log(textArray)
 
-    if (textArray[textArray.length - 1] != '') return textArray[textArray.length - 1]
+    if (textArray[textArray.length - 1] != '' && textArray.length > 1) return textArray[textArray.length - 1]
     else return "none"
 }
 
 
-console.log(getExtension('text.txt.gz.quaqua'))
+console.log(getExtension('text'))
 
 
 /*
