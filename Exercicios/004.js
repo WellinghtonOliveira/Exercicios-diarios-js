@@ -1,8 +1,15 @@
 function getExtension(filename) {
 
-  return filename;
+    let textArray = filename.split('.')
+
+    console.log(textArray)
+
+    if (textArray[textArray.length - 1] != '') return textArray[textArray.length - 1]
+    else return "none"
 }
 
+
+console.log(getExtension('text.txt.gz.quaqua'))
 
 
 /*
