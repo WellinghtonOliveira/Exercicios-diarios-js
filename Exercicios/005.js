@@ -1,20 +1,21 @@
 
 
 function generateSignature(name, title, company) {
-    let primeiraLetra = name.slice(0, 1).toUppercase()
+    let primeiraLetra = name.slice(0, 1).toUpperCase()
 
     const pre = [
-        {"A-I": ">>"},
-        {"J-R": "--"},
-        {"S-Z": "::"}
+        ["[A-I]", ">>"],
+        ["[J-R]", "--"],
+        ["[S-Z]", "::"]
     ]
 
     for (let i = 0; i < pre.length; i++) {
-        
+        let ver  = pre[i][0]
+        let regex = new RegExp(ver)
+        if (regex.test(primeiraLetra)) return `${pre[i][1]}${name}, ${title} at ${company}`
     }
 
-
-    return name;
+    return "Erro!"
 }
 
 
