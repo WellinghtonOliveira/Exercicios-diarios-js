@@ -1,10 +1,16 @@
 function daysUntilWeekend(dateString) {
+  const dataAtual = new Date(dateString)
+  const indexDia = dataAtual.getDay()
 
-  return dateString;
+  if (indexDia > 4) {
+    return "sexta"
+  }
+  
+  console.log(indexDia)
 }
 
 
-console.log(daysUntilWeekend("2025-11-14"))
+console.log(daysUntilWeekend("2025-11-16"))
 
 
 /*
