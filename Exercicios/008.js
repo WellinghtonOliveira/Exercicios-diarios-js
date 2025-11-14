@@ -1,12 +1,16 @@
 function daysUntilWeekend(dateString) {
-  const dataAtual = new Date(dateString)
-  const indexDia = dataAtual.getDay()
+  const date = new Date(dateString)
+  const day = date.getUTCDay() // garante que não usa timezone local
 
-  if (indexDia > 4) {
-    return "sexta"
+  // 0 = domingo, 6 = sábado
+  if (day === 0 || day === 6) {
+    return "It's the weekend!"
   }
-  
-  console.log(indexDia)
+
+  const daysLeft = 6 - day
+  const label = daysLeft === 1 ? "day" : "days"
+
+  return `${daysLeft} ${label} until the weekend.`
 }
 
 
